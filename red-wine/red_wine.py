@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # %%
-red_wine_quality_file = "C:\\Github\\Wine-Quality-DS\\WineDataSets\\winequality-red.csv"
+#red_wine_quality_file = "C:\\Github\\Wine-Quality-DS\\WineDataSets\\winequality-red.csv"
+red_wine_quality_file = "C:\\Users\\Jonathan\\Github\\Wine-Quality-DS\\WineDataSets\\winequality-red.csv"
 red_wine_quality_data = pd.read_csv(red_wine_quality_file, sep=";")
 
 # Display the first five records
@@ -81,7 +82,7 @@ fixedAcidity_pH_data = red_wine_quality_data[['pH', 'fixed acidity']]
 
 # Initialize a joint-grid with the dataframe, using seaborn library
 gridA = sns.JointGrid(x="fixed acidity", y="pH",
-                      data=fixedAcidity_pH_data, size=6)
+                      data=fixedAcidity_pH_data, height=6)
 
 # Draw a regression plot in the grid
 gridA = gridA.plot_joint(sns.regplot, scatter_kws={"s": 10})
@@ -95,7 +96,7 @@ gridaA = gridA.plot_marginals(sns.distplot)
 fixedAcidity_citricAcid_data = red_wine_quality_data[[
     'citric acid', 'fixed acidity']]
 gridB = sns.JointGrid(x="fixed acidity", y="citric acid",
-                      data=fixedAcidity_citricAcid_data, size=6)
+                      data=fixedAcidity_citricAcid_data, height=6)
 gridB = gridB.plot_joint(sns.regplot, scatter_kws={"s": 10})
 gridB = gridB.plot_marginals(sns.distplot)
 
